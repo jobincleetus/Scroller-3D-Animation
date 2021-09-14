@@ -40,12 +40,14 @@ loader.load("scene.gltf", function (gltf){
 
     obj = gltf.scene;
     test();
-    gui.add(gltf.scene.rotation, 'x').min(-10).max(10)
-    gui.add(gltf.scene.rotation, 'y').min(-10).max(10)
-    gui.add(gltf.scene.rotation, 'z').min(-10).max(10)
-    gui.add(gltf.scene.position, 'x').min(-100).max(100)
-    gui.add(gltf.scene.position, 'y').min(-100).max(100)
-    gui.add(gltf.scene.position, 'z').min(-100).max(100)
+
+    var objectBase = gui.addFolder('Object')
+    objectBase.add(gltf.scene.rotation, 'x').min(-10).max(10)
+    objectBase.add(gltf.scene.rotation, 'y').min(-10).max(10)
+    objectBase.add(gltf.scene.rotation, 'z').min(-10).max(10)
+    objectBase.add(gltf.scene.position, 'x').min(-100).max(100)
+    objectBase.add(gltf.scene.position, 'y').min(-100).max(100)
+    objectBase.add(gltf.scene.position, 'z').min(-100).max(100)
 
 });
 
