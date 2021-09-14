@@ -24,10 +24,9 @@ renderer.shadowMap.enabled = true;
 var gui = new dat.GUI();
 
 var loader = new GLTFLoader();
-const dracoLoader = new DRACOLoader();
 
 var obj;
-loader.setDRACOLoader( dracoLoader );
+
 
 loader.load("scene.gltf", function (gltf){
     
@@ -49,11 +48,6 @@ loader.load("scene.gltf", function (gltf){
     objectBase.add(gltf.scene.position, 'x').min(-100).max(100)
     objectBase.add(gltf.scene.position, 'y').min(-100).max(100)
     objectBase.add(gltf.scene.position, 'z').min(-100).max(100)
-
-}, 
-function ( xhr ) {
-
-    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
 });
 
