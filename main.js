@@ -24,9 +24,10 @@ renderer.shadowMap.enabled = true;
 var gui = new dat.GUI();
 
 var loader = new GLTFLoader();
+const dracoLoader = new DRACOLoader();
 
 var obj;
-
+loader.setDRACOLoader( dracoLoader );
 
 loader.load("scene.gltf", function (gltf){
     
