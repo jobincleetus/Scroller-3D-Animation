@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Scroller 3D Animation</title>
+</head>
+<body>
+    <main>
+        <section class="banner">
+            <canvas></canvas>
+            <div class="container">
+                <div class="half-grid">
+                    <div class="half-grid-one">
+                        <h2>Porsche GT</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                    <div class="half-grid-two">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="second-sec">
+            <div class="container">
+                <div class="half-grid">
+                    <div class="half-grid-one">
+
+                    </div>
+                    <div class="half-grid-two">
+                        <h2>Porsche GT</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="third-sec">
+            <canvas></canvas>
+            <div class="container">
+                <div class="half-grid text-center">
+                    <div class="half-grid-one">
+                        <h2>Porsche GT</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                    <div class="half-grid-two">
+                    </div>
+                    <div class="half-grid-three">
+                        <h2>Porsche GT</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="GLTFLoader.js"></script>
+    <script src="dat.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js" integrity="sha512-JO6JyFPJupQKZf7icgZkHwuq/rAQxH7COqvEd4WdK52AtHPedwHog05T69pIelI69jVN/zZbW6TuHfH2mS8j/Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/CSSRulePlugin.min.js" integrity="sha512-HdiyPXmEtBWk82ejcu4gQSJ+Rz+bxGJvRxkZBFnuUElWjEbonHqYl/0657JBoLOPXVYds7FuWX5+hWpOXqSYeA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EasePack.min.js" integrity="sha512-IaB3ZbpZeosmNUJ/6IuXhhZUGvoLzGCbZKgTzqlqWMJotwKY5fYxrDJlAM/CFK56ShnSMKSNt/CNuznXXPRU9A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EaselPlugin.min.js" integrity="sha512-zuJZ04TDJ61JWWqye7v7K4lhrS6XX/eNBHEipXaTf/6Kv81skOtv8dWsWMYmj2D2bOBJNdofas7kFaufaz95SQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js" integrity="sha512-A8mX0AdhaYZ0ZuP49ROLvEyqcmurQShpLKBQfXIvDCtcA1zR3jj5whVGOB+9pb0vWixmm2lk2xlWjbaopVrOsQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js" integrity="sha512-FtkvR55hPH9dKb4c5j71UgIV8ut79QpPNo4tiJUPXk8fKMmCdmZk9o8/sxpYONZIVJyw3T3KqzAZ2YFEZRWc+g==" crossorigin="anonymous"></script>
+    <script>
+        var topPos = window.scrollY + document.querySelector(".banner .half-grid-two").getBoundingClientRect().top;
+        var leftPos = window.scrollX + document.querySelector(".banner .half-grid-two").getBoundingClientRect().left;
+
+        $("canvas").css({top: topPos, left: leftPos});
+
+        var topPosTwo = window.scrollY + document.querySelector(".second-sec .half-grid-two").getBoundingClientRect().top;
+        var leftPosTwo = window.scrollX + document.querySelector(".second-sec .half-grid-two").getBoundingClientRect().left;    
+
+        var topPosThree = window.scrollY + document.querySelector(".third-sec .half-grid-two").getBoundingClientRect().top;
+        var leftPosThree = window.scrollX + document.querySelector(".third-sec .half-grid-two").getBoundingClientRect().left;
+    </script>
+    <script type="module" src="main.js"></script>
+</html>

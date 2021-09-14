@@ -1,0 +1,66 @@
+body {
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    background-color: #000;
+}
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+section {
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 60px;
+    margin: 0 0 20px;
+}
+.container {
+    max-width: 1300px;
+    padding: 20px;
+    margin: 0 auto;
+    display: block;
+}
+p {
+    font-size: 16px;
+    padding-right: 20px;
+}
+.half-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    min-height: 100vh;
+}
+.half-grid-two, .half-grid-one {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+@media screen and (max-width: 768px) {
+    .half-grid {
+        grid-template-columns: auto !important;
+    }
+    .half-grid-two, .half-grid-one {
+        min-height: 50vh;
+    }
+}
+.second-sec .half-grid {
+    grid-template-columns: 50% 40%;
+}
+.third-sec  .half-grid {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
